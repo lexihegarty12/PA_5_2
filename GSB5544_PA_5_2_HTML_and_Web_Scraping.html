@@ -2275,15 +2275,15 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>4. There are several tables included in <code>soup</code>, so we need to narrow it down. Go to the cities table Wikipedia page and “Inspect” it. What are the attributes (class, style) of this table?</p>
-<div id="cell-12" class="cell" data-execution_count="50">
+<div id="cell-12" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE HERE</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&lt;div class=&quot;shortdescription nomobile noexcerpt noprint searchaux&quot; </span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># style=&quot;display:none&quot; about=&quot;#mwt1&quot; typeof=&quot;mw:Transclusion&quot; </span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number, table <span class="kw">in</span> <span class="bu">enumerate</span>(soup.find_all(<span class="st">&quot;table&quot;</span>), start<span class="op">=</span><span class="dv">1</span>):</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Table </span><span class="sc">{</span>number<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;class:&quot;</span>, table.get(<span class="st">&quot;class&quot;</span>))</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;style:&quot;</span>, table.get(<span class="st">&quot;style&quot;</span>))</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># for number, table in enumerate(soup.find_all(&quot;table&quot;), start=1):</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(f&quot;Table {number}&quot;)</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(&quot;class:&quot;, table.get(&quot;class&quot;))</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(&quot;style:&quot;, table.get(&quot;style&quot;))</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Table 1
 class: [&#39;sidebar&#39;, &#39;nomobile&#39;, &#39;nowraplinks&#39;]
@@ -2327,7 +2327,7 @@ style: border-spacing: 0px; text-align:left;width:auto; margin-left:auto; margin
 </code></pre>
 </div>
 </div>
-<p>The table has these attributes: - Class: shortdescription nomobile noexcerpt noprint searchaux - Style: display:none</p>
+<p>The table has these attributes: Table 3 class: [‘sortable’, ‘wikitable’, ‘sticky-header-multi’, ‘static-row-numbers’, ‘sort-under’, ‘col1left’, ‘col2center’] style: text-align:right</p>
 <p>5. You should find that the cities table on the Wikipedia page corresponds to the element</p>
 <pre><code>&lt;table class=&quot;sortable wikitable sticky-header-multi static-row-numbers sort-under col1left col2center&quot; style=&quot;text-align:right&quot;&gt;</code></pre>
 <p>How many tables in <code>soup</code> have these attributes?</p>
